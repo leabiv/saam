@@ -1,6 +1,7 @@
 package com.saam.springboot.app.models.dao;
 
 import java.util.List;
+import java.util.Optional;
 
 import com.saam.springboot.app.models.entity.Usuario;
 

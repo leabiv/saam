@@ -29,24 +29,17 @@
 
 			<tbody>
 				<tr th:each="mascota: ${mascotas}">
-					<td><a th:href="@{/info/} + ${mascota.registroUnico}"  th:text="${mascota.registroUnico}"></a></td>
 					<td th:text="${mascota.registroUnico}"></td>
 					<td th:text="${mascota.nombre}"></td>
 					<td th:text="${mascota.edad}"></td>
 					<td th:text="${mascota.genero}"></td>
 					<td th:text="${mascota.tamanio}"></td>
 					<td th:text="${mascota.descripcion}"></td>
-				<!-- 	<td><a th:href="@{'/materia/form/'} + ${estudiante.id}">Crear Materia</a></td>
-					<td><a th:href="@{/form/} + ${estudiante.id}">Editar</a></td>
-					<td><a th:href="@{/eliminar/} + ${estudiante.id}">Eliminar</a></td> -->
 
 				</tr>
 			</tbody>
 		</table>
 	
-	
-	
-		
 	</div>
 
 	<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

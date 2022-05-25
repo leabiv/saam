@@ -30,7 +30,7 @@ public class UsuarioController {
 		return "info";
 	}
 	
-	@RequestMapping(value = { "listar", "/" }, method = RequestMethod.GET)
+	@RequestMapping(value = { "listar"}, method = RequestMethod.GET)
 	public String Listar(Model model) {
 		model.addAttribute("titulo", "Listado de Usuarios Registrados");
 		model.addAttribute("usuarios", usuarioService.findAll());

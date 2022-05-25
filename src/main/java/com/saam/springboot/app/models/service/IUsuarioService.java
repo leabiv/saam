@@ -1,6 +1,7 @@
 package com.saam.springboot.app.models.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
@@ -27,4 +28,6 @@ public interface IUsuarioService {
 	public void deleteMascota(Long id);
 	
 	public Mascota finMascotaById(Long id);
+	
+	public List<Mascota>findAllMascota();
 }

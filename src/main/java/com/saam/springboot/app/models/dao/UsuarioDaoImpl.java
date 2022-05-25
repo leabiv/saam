@@ -1,6 +1,8 @@
 package com.saam.springboot.app.models.dao;
 
 import java.util.List;
+import java.util.Optional;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import org.springframework.stereotype.Repository;
@@ -28,15 +30,16 @@ public class UsuarioDaoImpl implements IUsuarioDao {
 	}
 
 	@Override
+	public void delete(Long id) {
+		Usuario usuario = findOne(id);
+		em.remove(usuario);	
+	}
+
+	@Override
 	public Usuario findOne(Long id) {
 		return em.find(Usuario.class, id);
 	}
 
-	@Override
-	public void delete(Long id) {
-		Usuario usuario = findOne(id);
-		em.remove(usuario);
-		
-	}
+
 
 }

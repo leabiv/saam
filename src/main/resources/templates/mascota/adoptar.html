@@ -12,9 +12,58 @@
 	<header th:replace="layout/layout :: header"> </header>
 
 	<div>
-		<h1 th:text="${titulo}"></h1>
 	
-		<p>Hola</p>
+		<div id="StyleFormRegistro" class="card container">
+		<br>
+		<div class="card row-lg">
+			
+				<h2 th:text="${titulo}"></h2>
+		
+		</div>
+		<br>
+		<form th:action="@{/mascota/adoptar/}" th:object="${mascota}" method="post" id="formRegistro" name="formRegistro">
+			<div class="row">
+			
+			<input th:value="${mascota.usuario.nombre}" disabled="disabled" />
+			
+				<div class="col-md-4 form-group">
+					<label for="nombre" class="form-label">Nombre de la
+						Mascota:</label> <input type="text" th:filed="*{nombre}" name="nombre" id="nombre"
+						placeholder="Digite su nombre" class="form-control" />
+				</div>
+				
+				<div class="col-md-4 form-group">
+					<label for="edad" class="form-label">Edad de la
+						Mascota:</label> <input type="number" th:filed="*{edad}" name="edad" id="edad"
+						placeholder="Digite la Edad" class="form-control" />
+				</div>
+				
+				<div class="col-md-4 form-group">
+					<label for="genero" class="form-label">Genero de la
+						Mascota:</label> <input type="text" th:filed="*{genero}" name="genero" id="genero"
+						placeholder="Digite el Genero" class="form-control" />
+				</div>
+				
+				<div class="col-md-4 form-group">
+					<label for="tamanio" class="form-label">Tamaño de la
+						Mascota:</label> <input type="text" th:filed="*{tamanio}" name="tamanio" id="tamanio"
+						placeholder="Digite la Estatura" class="form-control" />
+				</div>
+				
+				<div class="col-md-4 form-group">
+					<label for="descripcion" class="form-label">Descripcion de la
+						Mascota:</label> <input type="text" th:filed="*{descripcion}" name="descripcion" id="descripcion"
+						placeholder="Digite la Descripciob de la Mascota" class="form-control" />
+				</div>
+			
+			</div>
+		
+			<div class="row-lg">
+				<input type="submit" value="Asignar Mascota"/>
+			</div>
+			
+		</form>
+
 		
 	</div>
 

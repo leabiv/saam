@@ -14,7 +14,7 @@
 	<div>
 		<h1 th:text="${titulo}"></h1>
 		<h4><a th:href="@{/listar}">Listar Usuarios</a></h4>
-	
+		<h4><a th:href="@{'/mascota/adoptar/'} + ${usuario.idUsuario}">Crear Mascota</a></h4>
 		<ul>
 			<li th:text="${usuario.tipoDocumento}"></li>
 			<li th:text="${usuario.cedula}"></li>
@@ -22,7 +22,32 @@
 			<li th:text="${usuario.correo}"></li>
 			<li th:text="${usuario.telefono}"></li>
 		</ul>
+		
+		<div th:if="${#lists.isEmpty(usuario.mascotas)}" th:text="'No hay mascotas asignadas para al Usuario: '+ ${usuario.nombre}"></div>
+		<!-- <table th:if="${not #lists.isEmpty(usuario.mascotas)}"> -->
+		<table >
+			<thead>
+				<tr>
+					<th>Nombre de la Mascota</th>
+					<th>Edad</th>
+					<th>Genero</th>
+					<th>Tamaño</th>
+					<th>Descripcion</th>
+				</tr>
+			</thead>
 
+			<tbody>
+				<tr th:each="mascota: ${usuario.mascotas}">
+					<td th:text="${mascota.nombre}"></td>
+					<td th:text="${mascota.edad}"></td>
+					<td th:text="${mascota.genero}"></td>
+					<td th:text="${mascota.tamanio}"></td>
+					<td th:text="${mascota.descripcion}"></td>
+				</tr>
+				
+			</tbody>
+		</table>
+ 	
 		
 	</div>
 

@@ -1,6 +1,8 @@
 package com.saam.springboot.app.models.service;
 
 import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -60,5 +62,13 @@ public class UsuarioServiceImpl implements IUsuarioService {
 	public Mascota finMascotaById(Long id) {
 		return mascotaDao.findById(id).orElse(null);
 	}
+
+	@Override
+	@Transactional(readOnly = true)
+	public List<Mascota> findAllMascota() {
+		return (List<Mascota>) mascotaDao.findAll();
+	}
+
+
 
 }
